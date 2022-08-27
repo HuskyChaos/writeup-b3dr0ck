@@ -46,10 +46,10 @@ With this, i have everything i need for our next step.
 
 ## Foothold
 
-1. Executing the socat command i got from help menu and i got another pseudo shell.  
+1. Executing the "socat" command i got from "help" menu and i got another pseudo shell.  
 Let's see what i get from here.  
 
-2. Type help and it gave me a password hint.  
+2. Type "help" and it gave me a password hint.  
 
 ![pseudo-2](./pseudoSh-2.png)  
 
