@@ -32,4 +32,13 @@ I tried few commands there and heres what i found.
 we can execute very few commands but the most important one was help.  
 "help" gave us a command which requires a certificate and a key.  
 
-![help](./help.png)
+![help](./help.png)  
+
+Next i tried cert and key and we got exactly what we needed.  
+
+![cert](./cert.png)  
+it's exactly the same certificate we found in nmap scan.  
+
+![key](./key.png)  
+
+With this, we have everything we need for our next step.  
