@@ -27,4 +27,9 @@ I tried using nc to see if i can get something and voilah
 
 ![pseudo-shell](./pseudo-shell.png)  
 we get some kind of pseudo shell.  
-I tried few commands there and heres what i found.
+I tried few commands there and heres what i found.  
+
+we can execute very few commands but the most important one was help.  
+"help" gave us a command which requires a certificate and a key.  
+
+![help](./help.png)
