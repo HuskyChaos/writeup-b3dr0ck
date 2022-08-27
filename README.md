@@ -49,6 +49,9 @@ With this, we have everything we need for our next step.
 let's see what we get from here.  
 
 2. Type help and we got a password hint.  
-Going with hit and trial on the ssh port with the aquired information.
 
 ![pseudo-2](./pseudoSh-2.png)  
+
+3. I tried to login the ssh port with the aquired information and it worked.
+we are in as "######".
+
