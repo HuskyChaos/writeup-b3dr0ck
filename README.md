@@ -10,15 +10,15 @@
 
 ![nmap-scan-2](./nmap-scan-2.png)
 
-We see 4 open ports and a certificate.  
-We don't know what to do with the certificate yet so let's just save it in a .cert file for later use.  
+I see 4 open ports and a certificate.  
+I don't know what to do with the certificate yet so let's save it in a .cert file for later use.  
 
 2. Let's check the webpage.  
 
 ![webpage](./webpage.png)
 
-We are getting redirected to port 4040 and it has a message for us.  
-We definitely need that certificate from nmap scan.
+I am getting redirected to port 4040 and it has a message for us.  
+I definitely need that certificate from nmap scan.
 
 3. Little bit more digging.  
 
@@ -27,49 +27,50 @@ and more but it was all just a waste of time except "nc".
 I tried using nc to see if i can get something and voilah
 
 ![pseudo-shell](./pseudo-shell.png)  
-We get some kind of pseudo shell.  
+I get some kind of pseudo shell.  
 I tried few commands there and heres what i found.  
 
 we can execute very few commands but the most important one was "help".  
-"help" gave us another command which requires a certificate and a key.  
+"help" gave me another command which requires a certificate and a key.  
 
 ![help](./help.png)  
 
-Next i tried cert and key and we got exactly what we needed.  
+Next i tried cert and key and i got exactly what i needed.  
 
 ![cert](./cert.png)  
-it's exactly the same certificate we found in nmap scan.  
+it's exactly the same certificate i had found in nmap scan.  
 
 ![key](./key.png)  
-With this, we have everything we need for our next step.  
+With this, i have everything i need for our next step.  
 
 
 ## Foothold
 
-1. Executing the socat command we got from help menu we got another pseudo shell.  
-let's see what we get from here.  
+1. Executing the socat command i got from help menu and i got another pseudo shell.  
+Let's see what i get from here.  
 
-2. Type help and we got a password hint.  
+2. Type help and it gave me a password hint.  
 
 ![pseudo-2](./pseudoSh-2.png)  
 
-3. I tried to login the ssh port with the aquired information and it worked.
-we are in as "######". We can find a flag on home directory.
+3. I tried ssh port with the aquired credentials and it worked.
+I am in as "######".
+
 
 ### Privilege Escalation
 
-1. The first thing i try is "sudo -l". we see that this user can use certutil as super user.  
-Lets try using it and see what we can do.
+1. The first thing i try is "sudo -l". I see that this user can use certutil as super user.  
+Lets try using it and see what i can do.
 
 ![sudo-l](./sudo-l.png)
 
-2. We can use this to generate certificate and key for a user.  
+2. I can use this to generate certificate and key for a user.  
 
-So here is what i will do.  
-1. I read /etc/passwd file and found that there was another user.
-2. I used certutil to generate cert,key for that user.
-3. used the same socat command with these new cert and key file.
-4. We got the same pseudo shell like before and we used help which gave us the ssh password for second user.
+So here is what i did.  
+1. I read "/etc/passwd" file and found that there was another user.
+2. I used "sudo certutil" to generate cert,key for that user.
+3. I used the same "socat" command with these new cert and key file.
+4. I got the same pseudo shell like before and i used "help" which gave me the ssh password for second user.
 
 
 ### Root
@@ -80,9 +81,10 @@ From here on things are easy
 ![sudo-l-2](./sudo-l-2.png)  
 
 2. Going for the first one first.
-3. using "sudo base64 filename" will give us a base64 encoded text.
-4. Decoding it will give us another base32 encoded text
-5. Again decoding it gives us a base64 encoded file.
-6. Using hash-identifier for the last one shows that it is a md5 encrypted text.
-7. Using crackstation for this one and we got the root password.
-8. "su root" enter the password and we have rooted the machine.😁
+3. using "sudo base64 filename" gave me a base64 encoded text.
+4. Decoding it gave me another base32 encoded text
+5. Again decoding it gave me a base64 encoded file.
+6. After final base64 decode i got a hash.
+7. Using hash-identifier for the last one shows that it is a md5 hash.
+8. Using crackstation for this one and i got the root password.
+9. "su root" enter the password and i rooted the machine.😁
