@@ -53,5 +53,11 @@ let's see what we get from here.
 ![pseudo-2](./pseudoSh-2.png)  
 
 3. I tried to login the ssh port with the aquired information and it worked.
-we are in as "######".
+we are in as "######". We can find a flag on home directory.
 
+### Privilege Escalation
+
+1. The first thing i try is "sudo -l". we see that this user can use certutil as super user.  
+Lets try using it and see what we can do.
+
+![sudo-l](./sudo-l.png)
