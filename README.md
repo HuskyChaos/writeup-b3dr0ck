@@ -61,3 +61,19 @@ we are in as "######". We can find a flag on home directory.
 Lets try using it and see what we can do.
 
 ![sudo-l](./sudo-l.png)
+
+2. We can use this to generate certificate and key for a user.  
+
+So here is what i will do.  
+1. I read /etc/passwd file and found that there was another user.
+2. I used certutil to generate cert,key for that user.
+3. used the same socat command with these new cert and key file.
+4. We got the same pseudo shell like before and we used help which gave us the ssh password for second user.
+
+
+### Root
+
+From here on things are easy  
+1. I did "sudo -l" and saw something unusual
+
+![sudo-l-2](./sudo-l-2.png)
