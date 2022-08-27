@@ -23,8 +23,8 @@ I definitely need that certificate from nmap scan.
 3. Little bit more digging.  
 
 Usually my next move is to "curl -v" the page, "searchsploit" the version number, using "feroxbuster"  
-and more but it was all just a waste of time except "nc".
-I tried using nc to see if i can get something and voilah
+and more but it was all just a waste of time except "nc".  
+I tried using nc to see if i can get something and i was right to do so.
 
 ![pseudo-shell](./pseudo-shell.png)  
 I get some kind of pseudo shell.  
