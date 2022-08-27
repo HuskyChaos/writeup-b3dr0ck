@@ -11,4 +11,4 @@
 ![nmap-scan-2](./nmap-scan-2.png)
 
 we see 4 open ports and a certificate.
-we don't know what to do with the certificate yet so let's just save it in a .cert file for later use
+  we don't know what to do with the certificate yet so let's just save it in a .cert file for later use
