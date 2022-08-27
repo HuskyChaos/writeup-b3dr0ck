@@ -25,6 +25,6 @@ My usual next move is to curl -v the page, searchsploit the version number, usin
 and more but it was all just a waste of time.
 I tried using nc to see if i can get something and voilah
 
-![pseudo-shell](./pseudo-shell.png)
+![pseudo-shell](./pseudo-shell.png)  
 we get some kind of pseudo shell.  
 I tried few commands there and heres what i found.
