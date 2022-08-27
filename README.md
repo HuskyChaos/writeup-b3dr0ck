@@ -42,3 +42,10 @@ it's exactly the same certificate we found in nmap scan.
 ![key](./key.png)  
 
 With this, we have everything we need for our next step.  
+
+### Foothold
+
+1. Executing the socat command we got from help menu we got another pseudo shell.  
+let's see what we get from here.
+![pseudo-2](./pseudo-2.png)  
+
