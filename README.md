@@ -76,4 +76,12 @@ So here is what i will do.
 From here on things are easy  
 1. I did "sudo -l" and saw something unusual
 
-![sudo-l-2](./sudo-l-2.png)
+![sudo-l-2](./sudo-l-2.png)  
+
+2. Going for the first one first.
+3. using "sudo base64 filename" will give us a base64 encoded text.
+4. Decoding it will give us another base32 encoded text
+5. Again decoding it gives us a base64 encoded file.
+6. Using hash-identifier for the last one shows that it is a md5 encrypted text.
+7. Using crackstation for this one and we got the root password.
+8. "su root" enter the password and we have rooted the machine.😁
