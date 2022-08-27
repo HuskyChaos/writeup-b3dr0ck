@@ -57,7 +57,7 @@ Let's see what i get from here.
 I am in as "######".
 
 
-### Privilege Escalation
+## Privilege Escalation
 
 1. The first thing i try is "sudo -l". I see that this user can use certutil as super user.  
 Lets try using it and see what i can do.
@@ -73,7 +73,7 @@ So here is what i did.
 4. I got the same pseudo shell like before and i used "help" which gave me the ssh password for second user.
 
 
-### Root
+## Root
 
 From here on things are easy  
 1. I did "sudo -l" and saw something unusual
