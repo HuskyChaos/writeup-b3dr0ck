@@ -1,21 +1,21 @@
 # TryHackMe - b3dr0ck
 
-![room icon](./room-icon.png)
+![room icon](./img/room-icon.png)
 
 ## Reconnaissance
 
 1. Starting with port scan using rustscan
 
-![nmap-scan-1](./nmap-scan-1.png)
+![nmap-scan-1](./img/nmap-scan-1.png)
 
-![nmap-scan-2](./nmap-scan-2.png)
+![nmap-scan-2](./img/nmap-scan-2.png)
 
 I see 4 open ports and a certificate.  
 I don't know what to do with the certificate yet so let's save it in a .cert file for later use.  
 
 2. Let's check the webpage.  
 
-![webpage](./webpage.png)
+![webpage](./img/webpage.png)
 
 I am getting redirected to port 4040 and it has a message for us.  
 I definitely need that certificate from nmap scan.
@@ -26,21 +26,21 @@ Usually my next move is to "curl -v" the page, "searchsploit" the version number
 and more but it was all just a waste of time except "nc".  
 I tried using nc to see if i can get something and i was right to do so.
 
-![pseudo-shell](./pseudo-shell.png)  
+![pseudo-shell](./img/pseudo-shell.png)  
 I get some kind of pseudo shell.  
 I tried few commands there and heres what i found.  
 
 we can execute very few commands but the most important one was "help".  
 "help" gave me another command which requires a certificate and a key.  
 
-![help](./help.png)  
+![help](./img/help.png)  
 
 Next i tried cert and key and i got exactly what i needed.  
 
-![cert](./cert.png)  
+![cert](./img/cert.png)  
 it's exactly the same certificate i had found in nmap scan.  
 
-![key](./key.png)  
+![key](./img/key.png)  
 With this, i have everything i need for our next step.  
 
 
@@ -51,7 +51,7 @@ Let's see what i get from here.
 
 2. Type "help" and it gave me a password hint.  
 
-![pseudo-2](./pseudoSh-2.png)  
+![pseudo-2](./img/pseudoSh-2.png)  
 
 3. I tried ssh port with the aquired credentials and it worked.
 I am in as "######".
@@ -62,7 +62,7 @@ I am in as "######".
 1. The first thing i try is "sudo -l". I see that this user can use certutil as super user.  
 Lets try using it and see what i can do.
 
-![sudo-l](./sudo-l.png)
+![sudo-l](./img/sudo-l.png)
 
 2. I can use this to generate certificate and key for a user.  
 
@@ -78,7 +78,7 @@ So here is what i did.
 From here on things are easy  
 1. I did "sudo -l" and saw something unusual
 
-![sudo-l-2](./sudo-l-2.png)  
+![sudo-l-2](./img/sudo-l-2.png)  
 
 2. Going for the first one first.
 3. using "sudo base64 filename" gave me a base64 encoded text.
